@@ -7,6 +7,14 @@ const app = Vue.createApp({
             boxCSelected:false
         };
     },
+
+    computed:{
+        boxAClasses(){
+            /* if you have if statement or conditions or logic */
+            return {active: this.boxASelected };
+        }
+    },
+    
     methods:{
         boxSelected(box){
             if(box === 'A'){
