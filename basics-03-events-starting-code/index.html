@@ -19,18 +19,18 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="add(5)">Add</button>
-      <button v-on:click="remove(5)">Remove</button>
+      <button @click="add(5)">Add</button>
+      <button @click="remove(5)">Remove</button>
       <p v-once>Starting Counter: {{counter}}</p>
       <p>Result: {{ counter }}</p>
       <!-- <input v-bind:value="name" v-on:input="setName($event, 'Eleomar' , lastname)"
        v-on:keyup.enter="confirmInput" type="text"> -->
-       <input type="text" v-model="name">
+       <input type="text"  v-model="name">
        <input type="text" v-model="lastname">
-       <button v-on:click="resetInput">Reset Input</button>
+       <button @click="resetInput">Reset Input</button>
       <p>your name: {{fullname}}</p>
       
-      <form v-on:submit.prevent="submitForm">
+      <form @submit.prevent="submitForm">
         <input type="text">
         <button>Signup</button>
       </form>
