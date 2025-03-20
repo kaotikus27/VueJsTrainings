@@ -22,7 +22,7 @@
       <input v-model="userInputA" type="text" />
       <br>
       <!-- (available classes: "user1", "user2") -->
-      <p  :class="[toggleValue ? 'visible' : 'hidden', userInputA]">
+      <p  :class="paraClasses">
         Style me!
       </p>
       

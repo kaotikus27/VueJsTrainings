@@ -4,25 +4,22 @@ const app = Vue.createApp({
         return{
             userInputA:'',
             userInputB:'',
-            class1:false,
-            class2:false,
             toggleValue:true
         }
     },
 
     computed:{
-       
+       paraClasses(){
+        return {
+            user1: this.userInputA === 'user1',
+            user2: this.userInputA === 'user2',
+            visbile:this.toggleValue,
+            hidden:!this.toggleValue
+        }
+       }
     },
 
     methods:{
-
-        classSelected(classType){
-            if(classType === 'user1'){
-                this.class1 = !this.class1;
-            }else if (classType === 'user2'){
-                this.class2 = !this.class2;
-            }
-        },
 
         toggleBtn(){
             this.toggleValue = !this.toggleValue;
