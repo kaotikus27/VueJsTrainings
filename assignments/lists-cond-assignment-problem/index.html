@@ -22,16 +22,17 @@
       <!-- When clicking "Add Task" a new task with the entered text should be added -->
       <input v-model="enteredValue" type="text">
       <button @click="addTask">Add Task</button>
-      <ul v-show="toggle">
+      <ul v-if="toggle">
         <!-- 2) Output the list of tasks here -->
-         <li v-for="(task,index) in tasks">
+         <li :key="task" v-for="(task,index) in tasks" >
           <p>{{task}}</p>
          </li>
       </ul><br></br>
       <!-- 3) When the below button is pressed, the list should be shown or hidden -->
       <!-- BONUS: Also update the button caption -->
-      <button :class="boxAClasses" @click="toggleBtn()"> 
-        <p>Hide</p>
+      <button @click="toggleBtn()"> 
+        <p>{{btnCaption}}</p>
+
        </button>
     </section>
   </body>

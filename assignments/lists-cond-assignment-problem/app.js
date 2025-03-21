@@ -2,10 +2,14 @@ const app = Vue.createApp({
     data(){
        return{
         enteredValue:'',
-        btnText: 'Hide',
         tasks:[],
         toggle:true
        }
+    },
+    computed:{
+        btnCaption(){
+           return this.toggle ? 'Hide' : 'Show List';
+        }
     },
     methods:{
         addTask(){
@@ -13,7 +17,6 @@ const app = Vue.createApp({
         },
         toggleBtn(){
             this.toggle = !this.toggle;
-            this.btnText = 'Show List'
         }
     }
 });
