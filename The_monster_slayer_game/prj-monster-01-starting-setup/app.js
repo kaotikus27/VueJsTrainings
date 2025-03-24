@@ -14,13 +14,21 @@ const app = Vue.createApp({
          }
     },
     computed:{
-
+        mosnterBarStyles(){
+          return   {width: this.monsterHealth + '%'}
+        },
+        playerBarStyles(){
+          return   {width: this.playerHealth + '%'}
+        }
     },
     methods:{
         attackMonster(){
-            const attackValue = randomValue(5,12);
+            const attackValue = randomValue(7,12);
             this.monsterHealth -= attackValue;
             this.attackPlayer();
+
+            console.log("clicked")
+            console.log(attackValue)
         },
         attackPlayer(){
             const attackValue = randomValue(8,15);
@@ -29,4 +37,4 @@ const app = Vue.createApp({
     }
 
 });
-app.mount('game');
+app.mount('#game');
