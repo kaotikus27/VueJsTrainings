@@ -12,7 +12,7 @@ const app = Vue.createApp({
 
 app.component('friend-contact',{
   template:`
-  <li v-for="friend in friends" :key="friend.id">
+  <li>
           <h2>{{friend.name}}</h2>
           <button @click="toggleDetails">{{detailsAreVisible ? 'Hide': 'Show'}} Details</button>
           <ul v-if="detailsAreVisible">
@@ -23,7 +23,13 @@ app.component('friend-contact',{
   `,
     data(){
         return{
-            detailsAreVisible:false
+            detailsAreVisible:false,
+            friend:
+            { id:"manuel",
+                name:'Manuel Lorenze',
+                 phone:'01234 5678 091',
+                  email:'manuel@gloc.com'},
+              
         };
     },
     methods:{
