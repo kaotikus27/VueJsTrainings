@@ -1,3 +1,5 @@
+
+//main component app 
 const app = Vue.createApp({
     data(){
         return{
@@ -10,6 +12,8 @@ const app = Vue.createApp({
     
 });
 
+
+//app component friend - contact
 app.component('friend-contact',{
   template:`
   <li>
